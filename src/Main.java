@@ -16,21 +16,18 @@ public class Main {
             return;
         }
 
-        do {
+        while (scanner.hasNext()) {
             readNumber = scanner.nextInt();
-            if (!list.containsKey(readNumber)){
+            if (!list.containsKey(readNumber)) {
                 list.put(readNumber, 1);
-            }else {
+            } else {
                 list.put(readNumber, (list.get(readNumber) + 1));
             }
-
-        } while(scanner.hasNext());
-
-        Set<Integer> keySet= list.keySet();
+        }
+        Set<Integer> keySet = list.keySet();
 
         for (Integer number : keySet) {
-            System.out.printf("%d, liczba wystąpień: %d\n", number, list.get(number) );
+            System.out.printf("%d, liczba wystąpień: %d\n", number, list.get(number));
         }
-
     }
 }
